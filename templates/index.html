@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cupcakes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">  
+</head>
+
+<body>
+  <div class="message hidden" id="messages"></div>
+  <div class="container">
+    <p class="display-1">Cupcakes</p>
+    <div id="list" class="row row-cols-1 row-cols-sm-2 row-cols-md-3"></div>
+    <div>
+        <p class="display-1">Add a Cupcake</p>
+        <form method="POST" id="form-cupcake">
+            <label class="form-label">Flavor</label>
+            <input type="text" id="flavor" name="flavor" class="form-control" required />
+            <label class="form-label">Size</label>
+            <input type="text" id="size" name="size" class="form-control" required />
+            <label class="form-label">Rating</label>
+            <input type="number" id="rating" name="rating" class="form-control" required />
+            <label class="form-label">Image</label>
+            <input type="url" id="image" name="image" class="form-control" />
+
+            <button type="submit" class="btn btn-success mt-3">Submit</button>
+        </form>
+    </div>
+  </div>
+  <script src="http://unpkg.com/jquery"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"></script>
+  <script src="http://unpkg.com/axios/dist/axios.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+
+</html>
