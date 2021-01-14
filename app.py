@@ -43,7 +43,7 @@ def get_cupcake_data(cupcake = None , error_messages = []):
     
     cupcake.flavor = flavor
     cupcake.size = size
-    cupcake.rating = rating
+    cupcake.rating = float_rating
     cupcake.image = image
 
     return cupcake
@@ -103,16 +103,18 @@ def update_cupdate(cupcake_id):
     cupcake = get_cupcake_data(cupcake=cupcake , error_messages=error_messages)
 
     print(cupcake)
+    print(error_messages)
 
     if len(error_messages) > 0:
         return jsonify({"error_messages" : error_messages} , 400)
     
     try:
         db.session.commit()
-
+        print(cupcake)
         return jsonify({"cupcake" : cupcake.serialize()})
     except:
         error_messages.append(('db_error' , 'Error when updating cupcake!'))
+        # print(error_messages)
         return jsonify({"error_messages" : error_messages} , 400)
 
 @app.route('/api/cupcakes/<int:cupcake_id>' , methods=['DELETE'])
